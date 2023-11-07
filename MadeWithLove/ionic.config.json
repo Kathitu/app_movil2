@@ -1,0 +1,7 @@
+{
+  "name": "MadeWithLove",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
