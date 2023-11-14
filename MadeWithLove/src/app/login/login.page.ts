@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
-//import { FingerprintAIO} from '@awesome-cordova-plugins/fingerprint-aio/ngx';
+import { FingerprintAIO} from '@awesome-cordova-plugins/fingerprint-aio/ngx';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
 
   constructor(public fb: FormBuilder,
     public alertController: AlertController,
-    public navCtrl: NavController, ) { //private fingerprintaio: FingerprintAIO
+    public navCtrl: NavController, private fingerprintaio: FingerprintAIO) {
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("", Validators.required),
       'email': new FormControl("", [Validators.required, Validators.email]), // Agregar validación de email
@@ -23,20 +23,20 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-  //  this.autenticar();
+    this.autenticar();
   }
 
-  //autenticar(){
-  //  this.fingerprintaio.isAvailable().then(() => {
-  //    this.fingerprintaio.show({}).then((val) => {
-  //      alert(JSON.stringify(val));
-  //    },(error) => {
-  //      alert(JSON.stringify(error));
-  //    })
-  //  }, (error) => {
-  //    alert("Error en auntenticar huella dacticar");
-  //  })
-  //}
+  autenticar(){
+    this.fingerprintaio.isAvailable().then(() => {
+      this.fingerprintaio.show({}).then((val) => {
+        alert(JSON.stringify(val));
+      },(error) => {
+        alert(JSON.stringify(error));
+      })
+    }, (error) => {
+      alert("Error en auntenticar huella dacticar");
+    })
+  }
 
   async ingresar() {
     var f = this.formularioLogin.value;

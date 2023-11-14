@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-//import { ModuloComponentesModule } from 'src/componentes/modulo-componentes.module';
+import { ModuloComponentesModule } from 'src/componentes/modulo-componentes.module';
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
-    //ModuloComponentesModule
+    HomePageRoutingModule,
+    ModuloComponentesModule
   ],
   declarations: [HomePage]
 })

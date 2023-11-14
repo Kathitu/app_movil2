@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicarPageRoutingModule } from './publicar-routing.module';
+import { DetalleMipublicacionPageRoutingModule } from './detalle-mipublicacion-routing.module';
 
-import { PublicarPage } from './publicar.page';
+import { DetalleMipublicacionPage } from './detalle-mipublicacion.page';
 import { ModuloComponentesModule } from 'src/componentes/modulo-componentes.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ModuloComponentesModule } from 'src/componentes/modulo-componentes.modu
     CommonModule,
     FormsModule,
     IonicModule,
-    PublicarPageRoutingModule,
+    DetalleMipublicacionPageRoutingModule,
     ModuloComponentesModule
   ],
-  declarations: [PublicarPage]
+  declarations: [DetalleMipublicacionPage]
 })
-export class PublicarPageModule {}
+export class DetalleMipublicacionPageModule {}

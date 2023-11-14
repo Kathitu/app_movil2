@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: MiperfilPage
-  }
+  },
+  {//ruta nieta
+    path: 'detalle-mipublicacion',
+    loadChildren: () => import('../detalle-mipublicacion/detalle-mipublicacion.module').then( m => m.DetalleMipublicacionPageModule)
+  },
 ];
 
 @NgModule({

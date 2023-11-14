@@ -48,6 +48,6 @@ export class MiperfilPage implements OnInit {
         entrada: entrada
       }
     }
-    this.router.navigate(['/entradas-detalle'], datosNavegacion);
+    this.router.navigate(['/detalle-mipublicacion'], datosNavegacion);
   }
 }
