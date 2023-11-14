@@ -11,12 +11,16 @@ export class ExplorarPage implements OnInit {
   
   usuarios: any[] = [];
 
-  constructor(public navCtrl: NavController, public service: ApiService) {}
+  constructor(public navCtrl: NavController, public service: ApiService) {
+    console.log("marca");
+  }
 
   ionViewDidLoad() {
+    console.log("marca 2");
     this.service.obtenerDatos()
       .subscribe(
         (data: any) => {
+          console.log(data);
           this.usuarios = data;
         },
         (error) => {
