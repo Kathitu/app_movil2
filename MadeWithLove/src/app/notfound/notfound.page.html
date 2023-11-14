@@ -1,13 +1,16 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notfound</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Página no encontrada :(</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notfound</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-content class="ion-padding">
+  <h1>Parece que la pagina que esta buscando no se encuentra disponible.</h1>
+  <h1>Te recomendamos verificar la URL para evitar errores.</h1>
+  <ion-img src="https://64.media.tumblr.com/4f852e1f0d338195de9fc99ea18fc270/d7e5ba10610251da-24/s1280x1920/d1028b67f6390300353e1739f89e20e951de40ac.gifv"></ion-img>
+  
+  <ion-button [routerLink]="['/inicio']" expand="block">
+    <ion-icon name="chevron-back-circle-outline" slot="start"></ion-icon>
+    Volver al inicio
+  </ion-button>
+  </ion-content>

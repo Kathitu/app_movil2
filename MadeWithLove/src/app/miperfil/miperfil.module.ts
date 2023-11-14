@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MiperfilPageRoutingModule } from './miperfil-routing.module';
 
 import { MiperfilPage } from './miperfil.page';
+import { ApiService } from '../api-rest.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MiperfilPage } from './miperfil.page';
     IonicModule,
     MiperfilPageRoutingModule
   ],
-  declarations: [MiperfilPage]
+  declarations: [MiperfilPage],
+  providers: [ApiService]
 })
 export class MiperfilPageModule {}

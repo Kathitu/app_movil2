@@ -1,13 +1,64 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>miperfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi perfil</ion-title>
+    <ion-icon name="notifications-outline" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">miperfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <div class="perfil-info">
+
+        <div class="perfil-image">
+          <img src="https://veteasy-api.s3-eu-west-1.amazonaws.com/media/blog_posts/961/main_image.jpg" alt="Imagen de perfil">
+        </div>
+      
+        <div class="perfil-detalles">
+          <!-- Textos: Publicaciones, Seguidores, Seguidos -->
+          <div class="perfil-stats">
+        
+            <span class="publicaciones-number">{{publicacionesCount}}</span>
+
+              <p>Publicaciones</p>
+
+              <span class="seguidores-number">10</span>
+              <p>Seguidores</p>
+
+              <span class="seguidos-number">10</span>
+              <p>Seguidos</p>
+          
+          </div>
+          <!-- Nombre y Usuario -->
+          <span class="name">@{{nombreUsuario}}</span>
+          <!-- Descripción -->
+          <p class="descripcion">Being a great chef since 2002 ;)</p>
+        </div>
+      </div>
+          <!-- Botón de Editar Perfil -->
+          <ion-button expand="block">
+            <ion-icon name="pencil-outline" slot="end"></ion-icon>
+            Editar perfil
+          </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list class="publicaciones">
+    <ion-item *ngFor="let entrada of entradas" (click)="irDetalle(entrada)">
+      <ion-label>
+        <h2>{{entrada.fecha}}</h2>
+        <p>{{entrada.texto}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+    <ion-fab [routerLink]="['/menu/publicar']" slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
 </ion-content>

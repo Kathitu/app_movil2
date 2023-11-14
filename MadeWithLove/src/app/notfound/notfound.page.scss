@@ -1,0 +1,17 @@
+ion-content::part(background) {
+    background: linear-gradient(rgb(168, 230, 255), rgb(255, 133, 184));
+  }
+
+  ion-content{
+    text-align:center;
+    
+    .ion-card-header{
+      margin-top: 10px;
+      }
+
+    h1{
+      margin-top: 10px;
+      font-size: 1.3rem;
+      color: #3F3D56;
+      }
+  }

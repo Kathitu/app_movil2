@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PublicarPageRoutingModule } from './publicar-routing.module';
 
 import { PublicarPage } from './publicar.page';
+//import { ModuloComponentesModule } from 'src/componentes/modulo-componentes.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { PublicarPage } from './publicar.page';
     FormsModule,
     IonicModule,
     PublicarPageRoutingModule
+    //ModuloComponentesModule
   ],
   declarations: [PublicarPage]
 })

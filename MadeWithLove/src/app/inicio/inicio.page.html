@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <ion-img src="https://64.media.tumblr.com/b956058b60ebfdf6546c037eafe6cf0f/5916712ff45f289e-a3/s1280x1920/3bbc7335c5aa4afcaa4540648ded2538d3a7e9e0.gifv"></ion-img>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Made With Love</ion-card-title>
+          <!--Imagen icono-->
+          <p>Bienvenido.</p>
+          <p>¿Que es lo que te gustaria hacer? </p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button [routerLink]="['/login']">Iniciar sesión</ion-button>
+      <ion-button [routerLink]="['/register']">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="contenedor-imagen">
+    <ion-img class="imagen-pequena" src="https://64.media.tumblr.com/60bc5ed0d696d67e4d842c93f2e95deb/fc409434796dc7a6-c4/s1280x1920/34a9ca3545256ac108cc7e1def0f873689548997.gifv"></ion-img>
+  </div>  
+
+    <h6>La red social culinaria definitiva donde cada receta compartida está hecho con amor! Experimenta una comunidad de entusiastas de la gastronomía, donde puedes compartir, explorar y archivar recetas exquisitas. Únete a nosotros y despierta tu pasión por la cocina en línea.</h6>
+    <ion-img src="https://64.media.tumblr.com/92c55d4f84c8b0819f06b856806becd4/7d8347eca6950536-48/s500x750/be0afbed4f842ca2b8a914bb3d3f1e66712d94e9.gif"></ion-img>
+  </ion-content>
