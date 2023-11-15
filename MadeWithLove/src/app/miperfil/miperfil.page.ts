@@ -27,18 +27,18 @@ export class MiperfilPage implements OnInit {
     this.nombreUsuario = this.apiService.getNombreUsuario();
   }
 
-  cargarEntradas(){
+  async cargarEntradas() {
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
     this.publicacionesCount = this.entradas.length;
-    if(!this.entradas)return;
+    if (!this.entradas) return;
     this.entradas.sort((item1, item2) => {
       if (item1.fecha < item2.fecha) return 1;
       if (item1.fecha > item2.fecha) return -1;
       return 0;
     });
   }
-
-  irDetalle(entrada: {
+  
+  async irDetalle(entrada: {
     fecha: string,
     fechaTexto: string,
     texto: string
@@ -49,5 +49,5 @@ export class MiperfilPage implements OnInit {
       }
     }
     this.router.navigate(['/detalle-mipublicacion'], datosNavegacion);
-  }
+  }  
 }
