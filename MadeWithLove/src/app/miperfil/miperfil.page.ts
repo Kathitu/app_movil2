@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
 import { ApiService } from '../api-rest.service';
 
 @Component({
@@ -11,23 +10,28 @@ import { ApiService } from '../api-rest.service';
 export class MiperfilPage implements OnInit {
   nombreUsuario: string = '';
   publicacionesCount: number = 0;
-
   entradas: Array<{
     fecha: string,
     fechaTexto: string,
     texto: string
   }> = [];
 
+  // Estas dos variables deben ser asignadas en algún lugar
+  nombre: string = '';
+  descripcion: string = '';
+
   constructor(private router: Router, private apiService: ApiService) {
     this.cargarEntradas();
-   }
-
-   ngOnInit() {
-    console.log("ngOnInit is running");
-    this.nombreUsuario = this.apiService.getNombreUsuario();
   }
 
-  async cargarEntradas() {
+  ngOnInit() {
+    console.log("ngOnInit is running");
+    this.nombreUsuario = this.apiService.getNombreUsuario();
+    this.apiService.nombre$.subscribe((nombre) => (this.nombre = nombre));
+    this.apiService.descripcion$.subscribe((descripcion) => (this.descripcion = descripcion));
+  }
+
+  cargarEntradas() {
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
     this.publicacionesCount = this.entradas.length;
     if (!this.entradas) return;
@@ -37,8 +41,8 @@ export class MiperfilPage implements OnInit {
       return 0;
     });
   }
-  
-  async irDetalle(entrada: {
+
+  irDetalle(entrada: {
     fecha: string,
     fechaTexto: string,
     texto: string
@@ -51,3 +55,4 @@ export class MiperfilPage implements OnInit {
     this.router.navigate(['/detalle-mipublicacion'], datosNavegacion);
   }  
 }
+

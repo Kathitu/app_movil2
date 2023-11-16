@@ -44,6 +44,10 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'edicionperfil',
+    loadChildren: () => import('./edicionperfil/edicionperfil.module').then( m => m.EdicionperfilPageModule)
+  },
+  {
     path: 'detalle-mipublicacion',
     loadChildren: () => import('./detalle-mipublicacion/detalle-mipublicacion.module').then( m => m.DetalleMipublicacionPageModule),
     canActivate: [IngresadoGuard]

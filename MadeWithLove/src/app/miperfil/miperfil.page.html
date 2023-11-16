@@ -35,11 +35,12 @@
           <!-- Nombre y Usuario -->
           <span class="name">@{{nombreUsuario}}</span>
           <!-- Descripción -->
-          <p class="descripcion">Being a great chef since 2002 ;)</p>
+          <p class="nombre">{{ nombre }}</p>
+          <p class="descripcion">{{ descripcion }}</p>
         </div>
       </div>
           <!-- Botón de Editar Perfil -->
-          <ion-button expand="block">
+          <ion-button [routerLink]="['/edicionperfil']" expand="block">
             <ion-icon name="pencil-outline" slot="end"></ion-icon>
             Editar perfil
           </ion-button>
