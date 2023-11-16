@@ -3,7 +3,7 @@
     <p id="fechaTexto">{{entrada.fechaTexto}}</p>
     <ion-textarea rows="2" [(ngModel)]="entrada.titulo" label="Titulo" labelPlacement="floating" [counter]="true" maxlength="100" [counterFormatter]="customCounterFormatter"></ion-textarea>
     <ion-textarea rows="15" [(ngModel)]="entrada.ingredientes" label="Ingredientes" labelPlacement="floating" [counter]="true" maxlength="1000" [counterFormatter]="customCounterFormatter"></ion-textarea>
-    <ion-textarea rows="30" [(ngModel)]="entrada.preparacion" label="Preparación" labelPlacement="floating" [counter]="true" maxlength="1000" [counterFormatter]="customCounterFormatter"></ion-textarea>
+    <ion-textarea rows="15" [(ngModel)]="entrada.preparacion" label="Preparación" labelPlacement="floating" [counter]="true" maxlength="1000" [counterFormatter]="customCounterFormatter"></ion-textarea>
   </ion-card-content>
 </ion-card>
 <ion-button expand="block" (click)="guardar()" (click)="vibrar()">Listo
