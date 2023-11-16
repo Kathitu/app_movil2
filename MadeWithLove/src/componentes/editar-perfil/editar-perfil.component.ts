@@ -13,6 +13,10 @@ export class EditarPerfilComponent implements OnInit {
   nuevaDescripcion: string = '';
   nuevoNombre: string = '';
 
+  customCounterFormatter(inputLength: number, maxLength: number) {
+    return `${maxLength - inputLength}`;
+  }
+
   constructor(private formBuilder: FormBuilder, private Apiservice: ApiService, private router: Router) {}
 
   guardarDescripcion(): void {
