@@ -10,11 +10,15 @@ export class DetalleMipublicacionPage implements OnInit {
   entrada: {
     fecha: string;
     fechaTexto: string;
-    texto: string;
+    titulo: string,
+    ingredientes: string,
+    preparacion: string,
   } = {
     fecha: '',
     fechaTexto: '',
-    texto: '',
+    titulo: '',
+    ingredientes: '',
+    preparacion: '',
   };
 
   constructor(private router: Router) {

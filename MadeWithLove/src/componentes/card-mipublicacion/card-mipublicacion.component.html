@@ -1,7 +1,9 @@
 <ion-card *ngIf="entrada">
   <ion-card-content>
     <p id="fechaTexto">{{entrada.fechaTexto}}</p>
-    <ion-textarea rows="15" [(ngModel)]="entrada.texto"></ion-textarea>
+    <ion-textarea rows="2" [(ngModel)]="entrada.titulo" label="Titulo" labelPlacement="floating" [counter]="true" maxlength="100" [counterFormatter]="customCounterFormatter"></ion-textarea>
+    <ion-textarea rows="15" [(ngModel)]="entrada.ingredientes" label="Ingredientes" labelPlacement="floating" [counter]="true" maxlength="1000" [counterFormatter]="customCounterFormatter"></ion-textarea>
+    <ion-textarea rows="30" [(ngModel)]="entrada.preparacion" label="Preparación" labelPlacement="floating" [counter]="true" maxlength="1000" [counterFormatter]="customCounterFormatter"></ion-textarea>
   </ion-card-content>
-  <ion-button expand="block" (click)="guardar()" (click)="vibrar()">Guardar</ion-button>
 </ion-card>
+<ion-button expand="block" (click)="guardar()" (click)="vibrar()">Guardar</ion-button>

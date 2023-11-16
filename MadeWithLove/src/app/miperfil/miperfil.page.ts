@@ -13,7 +13,9 @@ export class MiperfilPage implements OnInit {
   entradas: Array<{
     fecha: string,
     fechaTexto: string,
-    texto: string
+    titulo: string,
+    ingredientes: string,
+    preparacion: string
   }> = [];
 
   // Estas dos variables deben ser asignadas en algún lugar
@@ -45,7 +47,9 @@ export class MiperfilPage implements OnInit {
   irDetalle(entrada: {
     fecha: string,
     fechaTexto: string,
-    texto: string
+    titulo: string,
+    ingredientes: string,
+    preparacion: string
   }) {
     let datosNavegacion: NavigationExtras = {
       state: {

@@ -7,20 +7,31 @@ import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
   styleUrls: ['./card-mipublicacion.component.scss'],
 })
 export class CardMipublicacionComponent implements OnInit {
+
+  customCounterFormatter(inputLength: number, maxLength: number) {
+    return `${maxLength - inputLength}`;
+  }
+
   @Input() entrada: {
     fecha: string;
     fechaTexto: string;
-    texto: string;
-  } = { fecha: '', fechaTexto: '', texto: '' };
+    titulo: string,
+    ingredientes: string,
+    preparacion: string,
+  } = { fecha: '', fechaTexto: '', titulo: '', ingredientes:'', preparacion: ''};
 
   @Output() eventoGuardar: EventEmitter<{
     fecha: string;
     fechaTexto: string;
-    texto: string;
+    titulo: string,
+    ingredientes: string,
+    preparacion: string,
   }> = new EventEmitter<{
     fecha: string;
     fechaTexto: string;
-    texto: string;
+    titulo: string,
+    ingredientes: string,
+    preparacion: string,
   }>();
 
   constructor(private vibration: Vibration) { }

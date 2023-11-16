@@ -14,17 +14,24 @@ export class PublicarPage implements OnInit {
   entradas: Array<{ 
     fecha: string,
     fechaTexto: string,
-    texto: string
+    titulo: string,
+    ingredientes: string,
+    preparacion: string
+    
   }> = [];
 
   entradaActual: { 
     fecha: string,
     fechaTexto: string,
-    texto: string
+    titulo: string,
+    ingredientes: string,
+    preparacion: string
   } = {
     fecha: '',
     fechaTexto: '',
-    texto: ''
+    titulo: '',
+    ingredientes: '',
+    preparacion: '',
   };
 
   constructor(public toastController: ToastController) {
@@ -42,7 +49,9 @@ export class PublicarPage implements OnInit {
     this.entradaActual = {
       fechaTexto: moment().format('DD [de] MMMM [del] YYYY'),
       fecha: moment().format('DD-MM-YY'),
-      texto: ''
+      titulo: '',
+      ingredientes: '',
+      preparacion: ''
     };
   }
 
