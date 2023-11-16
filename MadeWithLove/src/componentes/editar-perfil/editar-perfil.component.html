@@ -1,17 +1,9 @@
-<ion-card>
-<ion-card-content class="ion-padding">
-  <form [formGroup]="perfilForm">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input formControlName="nombre" required></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Descripción</ion-label>
-      <ion-input formControlName="descripcion" required></ion-input>
-    </ion-item>
-    
-  <ion-button expand="full" (click)="guardarCambios()">Guardar Cambios</ion-button>
-  </form>
-</ion-card-content>
+<ion-card *ngIf="descusuario">
+  <ion-card-content>
+    <ion-input [(ngModel)]="descusuario.nombre" label="Nombre" labelPlacement="floating"></ion-input>
+    <ion-input [(ngModel)]="descusuario.descripcion" label="Descripción" labelPlacement="floating"></ion-input>
+  </ion-card-content>
 </ion-card>
+<ion-button expand="block" (click)="guardar()">Listo
+  <ion-icon name="checkmark"></ion-icon>
+</ion-button>

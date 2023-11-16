@@ -60,7 +60,7 @@ export class PublicarPage implements OnInit {
     localStorage.setItem('entradas', JSON.stringify(this.entradas));
 
     const toast = await this.toastController.create({
-      message: 'Datos guardados',
+      message: 'Receta publicada',
       duration: 2000
     });
     toast.present();
