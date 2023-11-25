@@ -12,5 +12,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-editar-perfil></app-editar-perfil>
+  <app-editar-perfil [descperfil]="descActual" (eventoGuardar)="guardarDesc()"></app-editar-perfil>
+  <!--[descperfil] y (eventoGuardar) == editar-perfil.component.ts
+      descActual y guardarDesc() == edicionperfil.page.ts -->
 </ion-content>

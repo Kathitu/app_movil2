@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ApiService } from '../api-rest.service';
-
 
 @Component({
   selector: 'app-miperfil',
@@ -9,8 +7,9 @@ import { ApiService } from '../api-rest.service';
   styleUrls: ['./miperfil.page.scss'],
 })
 export class MiperfilPage implements OnInit {
-  nombreUsuario: string = '';
   publicacionesCount: number = 0;
+
+  //entradas
   entradas: Array<{
     fecha: string,
     fechaTexto: string,
@@ -19,24 +18,19 @@ export class MiperfilPage implements OnInit {
     preparacion: string
   }> = [];
 
+  //descripcion
+  desc: Array<{
+    nombre: string,
+    descripcion: string
+  }> = [];
 
-  // Estas dos variables deben ser asignadas en algún lugar
-  //nombre: string = '';
-  //descripcion: string = '';
-
-
-  constructor(private router: Router, private apiService: ApiService) {
-    this.cargarEntradas();
+  constructor(private router: Router) {
+    this.cargarEntradas(); //entradas
+    this.cargarDescripcion();//descripcion
   }
-
 
   ngOnInit() {
-    //console.log("ngOnInit is running");
-    //this.nombreUsuario = this.apiService.getNombreUsuario();
-    //this.apiService.nombre$.subscribe((nombre) => (this.nombre = nombre));
-    //this.apiService.descripcion$.subscribe((descripcion) => (this.descripcion = descripcion));
   }
-
 
   cargarEntradas() {
     this.entradas = JSON.parse(localStorage.getItem('entradas') || '[]');
@@ -49,6 +43,9 @@ export class MiperfilPage implements OnInit {
     });
   }
 
+  cargarDescripcion() {
+    this.desc = JSON.parse(localStorage.getItem('desc') || '[]');
+  }
 
   irDetalle(entrada: {
     fecha: string,
@@ -63,7 +60,19 @@ export class MiperfilPage implements OnInit {
       }
     }
     this.router.navigate(['/detalle-mipublicacion'], datosNavegacion);
-  }  
+  }
+  
+  irDetalleDesc(descperfil: {
+    nombre: string,
+    descripcion: string
+  }) {
+    let datosNavegacion: NavigationExtras = {
+      state: {
+        descperfil: descperfil
+      }
+    }
+    this.router.navigate([''], datosNavegacion);
+  } 
 }
 
 

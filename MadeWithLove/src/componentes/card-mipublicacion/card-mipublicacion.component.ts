@@ -42,7 +42,7 @@ export class CardMipublicacionComponent implements OnInit {
     this.vibration.vibrate(200);
   }
 
-  guardar() {
+  guardarPublicacion() {
     this.eventoGuardar.emit(this.entrada);
   }
 }

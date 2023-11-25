@@ -1,11 +1,9 @@
-  <ion-card>
-    <ion-card-content>
-      <form [formGroup]="perfilForm">
-        <ion-textarea rows="1" formControlName="nombre" label="Nombre" labelPlacement="floating" [counter]="true" maxlength="40" [counterFormatter]="customCounterFormatter"></ion-textarea>
-        <ion-textarea rows="5" formControlName="descripcion" label="Descripción" labelPlacement="floating" [counter]="true" maxlength="100" [counterFormatter]="customCounterFormatter"></ion-textarea>
-      </form>
-    </ion-card-content>
-  </ion-card>      
-  <ion-button expand="block" (click)="guardarCambios()">Listo
-    <ion-icon name="checkmark"></ion-icon>
-  </ion-button>
+<ion-card *ngIf="descperfil">
+  <ion-card-content>
+      <ion-textarea rows="1" [(ngModel)]="descperfil.nombre" label="Nombre" labelPlacement="floating" [counter]="true" maxlength="40" [counterFormatter]="customCounterFormatter"></ion-textarea>
+      <ion-textarea rows="5" [(ngModel)]="descperfil.descripcion" label="Descripción" labelPlacement="floating" [counter]="true" maxlength="100" [counterFormatter]="customCounterFormatter"></ion-textarea>
+  </ion-card-content>
+</ion-card>      
+<ion-button expand="block" (click)="guardarDescripcion()" (click)="vibrar()" >Listo
+  <ion-icon name="checkmark"></ion-icon>
+</ion-button>

@@ -12,5 +12,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-card-mipublicacion [entrada]="entradaActual" (eventoGuardar)="guardar()"></app-card-mipublicacion>
+  <app-card-mipublicacion [entrada]="entradaActual" (eventoGuardar)="guardarEntrada()"></app-card-mipublicacion>
+  <!--[entrada] y (eventoGuardar) == card-mipublicacion.component.ts
+      entradaActual guardarEntrada == publicar.page.ts -->
 </ion-content>

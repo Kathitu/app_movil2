@@ -37,10 +37,9 @@
               <p>Seguidos</p>
          
           </div>
-          <!-- usuario, nombre y descripción
-          <span class="name">@{{nombreUsuario}}</span>
-          <p class="nombre">{{ nombre }}</p>
-          <p class="descripcion">{{ descripcion }}</p> -->
+          <!-- usuario, nombre y descripción -->
+          <p *ngFor="let descperfil of desc">{{descperfil.nombre}}</p>
+          <p *ngFor="let descperfil of desc">{{descperfil.descripcion}}</p>
         </div>
       </div>
           <!-- Botón de Editar Perfil -->

@@ -55,7 +55,7 @@ export class PublicarPage implements OnInit {
     };
   }
 
-  async guardar() {
+  async guardarEntrada() {
     this.entradas.push({ ...this.entradaActual });
     localStorage.setItem('entradas', JSON.stringify(this.entradas));
 
@@ -65,7 +65,7 @@ export class PublicarPage implements OnInit {
     });
     toast.present();
 
-    // Después de guardar, inicializa una nueva entrada para permitir agregar más
+    // despues de guardar inicializa una nueva entrada para permitir agregar mas
     this.InicializarNuevaEntrada();
   }
 
