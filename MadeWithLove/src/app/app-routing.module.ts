@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NoIngresadoGuard } from './no-ingresado.guard';
 import { IngresadoGuard } from './ingresado.guard';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -45,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'edicionperfil',
-    loadChildren: () => import('./edicionperfil/edicionperfil.module').then( m => m.EdicionperfilPageModule)
+    loadChildren: () => import('./edicionperfil/edicionperfil.module').then( m => m.EdicionperfilPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'detalle-mipublicacion',
@@ -72,6 +74,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 ];
+
 
 @NgModule({
   imports: [

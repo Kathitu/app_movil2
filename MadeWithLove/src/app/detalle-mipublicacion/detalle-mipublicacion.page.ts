@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-detalle-mipublicacion',
   templateUrl: './detalle-mipublicacion.page.html',
@@ -20,6 +21,8 @@ export class DetalleMipublicacionPage implements OnInit {
     ingredientes: '',
     preparacion: '',
   };
+  ApiService: any;
+
 
   constructor(private router: Router) {
     const extras = this.router.getCurrentNavigation()?.extras.state;
@@ -28,7 +31,15 @@ export class DetalleMipublicacionPage implements OnInit {
     }
    }
 
+
   ngOnInit() {
   }
 
+
+  eliminarEntrada(){
+    this.ApiService.deleteEntradas()
+  }
+
+
 }
+

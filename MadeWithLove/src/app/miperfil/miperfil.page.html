@@ -8,35 +8,39 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-content>
       <div class="perfil-info">
 
+
         <div class="perfil-image">
           <img src="https://veteasy-api.s3-eu-west-1.amazonaws.com/media/blog_posts/961/main_image.jpg" alt="Imagen de perfil">
         </div>
-      
+     
         <div class="perfil-detalles">
           <!-- Textos: Publicaciones, Seguidores, Seguidos -->
           <div class="perfil-stats">
-        
+       
             <span class="publicaciones-number">{{publicacionesCount}}</span>
 
+
               <p>Publicaciones</p>
+
 
               <span class="seguidores-number">10</span>
               <p>Seguidores</p>
 
+
               <span class="seguidos-number">10</span>
               <p>Seguidos</p>
-          
+         
           </div>
-          <!-- Nombre y Usuario -->
+          <!-- usuario, nombre y descripción
           <span class="name">@{{nombreUsuario}}</span>
-          <!-- Descripción -->
           <p class="nombre">{{ nombre }}</p>
-          <p class="descripcion">{{ descripcion }}</p>
+          <p class="descripcion">{{ descripcion }}</p> -->
         </div>
       </div>
           <!-- Botón de Editar Perfil -->
@@ -47,6 +51,7 @@
     </ion-card-content>
   </ion-card>
 
+
   <ion-list class="publicaciones">
     <ion-item *ngFor="let entrada of entradas" (click)="irDetalle(entrada)">
       <ion-label>
@@ -55,11 +60,11 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  
+ 
     <ion-fab [routerLink]="['/menu/publicar']" slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button>
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-  
+ 
 </ion-content>
