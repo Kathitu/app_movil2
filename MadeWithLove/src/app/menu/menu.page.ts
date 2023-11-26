@@ -27,6 +27,11 @@ export class MenuPage implements OnInit {
       icono: 'heart'
     },
     {
+      titulo: 'Recetas guardadas',
+      url: '/menu/guardados',
+      icono: 'bookmark'
+    },
+    {
       titulo:'Explorar',
       url: '/menu/explorar',
       icono: 'search'

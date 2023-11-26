@@ -60,6 +60,11 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'guardados',
+    loadChildren: () => import('./guardados/guardados.module').then( m => m.GuardadosPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: 'explorar',
     loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule),
     canActivate: [IngresadoGuard]
@@ -73,6 +78,7 @@ const routes: Routes = [
     redirectTo: 'notfound',
     pathMatch: 'full'
   },
+
 ];
 
 

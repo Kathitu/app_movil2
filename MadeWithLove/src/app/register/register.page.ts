@@ -12,7 +12,6 @@ import { ApiService } from '../api-rest.service';
 export class RegisterPage implements OnInit {
  
   formularioRegistro: FormGroup;
-  nombreUsuario: string = ''; // Variable para almacenar el nombre de usuario
 
   constructor(public fb: FormBuilder, 
     public alertController: AlertController,
@@ -42,7 +41,6 @@ export class RegisterPage implements OnInit {
       await alert.present();
       return;
     }
-    this.apiService.setNombreUsuario(f.nombre);
 
     var usuario = {
       nombre: f.nombre,
