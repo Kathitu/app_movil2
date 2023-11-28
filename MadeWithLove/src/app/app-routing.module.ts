@@ -70,6 +70,11 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'contacto',
+    loadChildren: () => import('./contacto/contacto.module').then( m => m.ContactoPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: 'notfound',
     loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
@@ -77,8 +82,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'notfound',
     pathMatch: 'full'
-  },
-
+  }
 ];
 
 

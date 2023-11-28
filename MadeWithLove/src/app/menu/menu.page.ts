@@ -36,6 +36,11 @@ export class MenuPage implements OnInit {
       url: '/menu/explorar',
       icono: 'search'
     },
+    {
+      titulo:'Contactanos',
+      url: '/menu/contacto',
+      icono: 'mail'
+    },
   ];
 
   constructor(public alertController: AlertController, public navCtrl: NavController) { }

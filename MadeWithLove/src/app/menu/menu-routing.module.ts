@@ -29,6 +29,10 @@ const routes: Routes = [
       loadChildren: () => import('../explorar/explorar.module').then( m => m.ExplorarPageModule)
     },
     {
+      path: 'contacto',
+      loadChildren: () => import('../contacto/contacto.module').then( m => m.ContactoPageModule)
+    },
+    {
       path: 'publicar',
       loadChildren: () => import('../publicar/publicar.module').then( m => m.PublicarPageModule)
     },
