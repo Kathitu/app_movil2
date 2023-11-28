@@ -1,0 +1,15 @@
+<ion-card>
+<ion-card-content>
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+      <ion-textarea rows="1" name="from_name" [(ngModel)]="formData.from_name" label="Nombre" labelPlacement="floating"></ion-textarea>
+      <ion-textarea rows="4" name="message" [(ngModel)]="formData.message" label="Mensaje" labelPlacement="floating"></ion-textarea>
+      <ion-textarea rows="1" name="email_id" [(ngModel)]="formData.email_id" label="Email" labelPlacement="floating"></ion-textarea>
+    <ion-button expand="full" type="submit" [disabled]="!form.valid">Enviar Correo</ion-button>
+  </form>
+</ion-card-content>
+</ion-card>
+
+<ion-textarea rows="1" name="from_name" [(ngModel)]="formData.from_name" label="Nombre" labelPlacement="floating"></ion-textarea>
+
+
+

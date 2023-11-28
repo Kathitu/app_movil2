@@ -10,10 +10,13 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { ApiService } from './api-rest.service';
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
 import { FingerprintAIO} from '@awesome-cordova-plugins/fingerprint-aio/ngx';
+import { FormsModule } from '@angular/forms';
+import { ContactoPageModule } from './contacto/contacto.module';
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, IonicModule, ContactoPageModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ApiService, SQLite, Vibration, FingerprintAIO],
   bootstrap: [AppComponent],
 })
