@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ApiService } from '../api-rest.service';
 
 @Component({
   selector: 'app-detalle-mipublicacion',
@@ -24,8 +24,7 @@ export class DetalleMipublicacionPage implements OnInit {
     preparacion: '',
   };
 
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private apiService: ApiService) {
     const extras = this.router.getCurrentNavigation()?.extras.state;
     if (extras && 'entrada' in extras) {
       this.entrada = extras['entrada'];
@@ -33,5 +32,10 @@ export class DetalleMipublicacionPage implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  eliminarEntrada() {
+    this.apiService.eliminarEntrada(this.entrada.id);
+    this.router.navigate(['/menu/miperfil']);
   }
 }
