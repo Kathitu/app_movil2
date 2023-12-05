@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import * as moment from 'moment';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-publicar',
@@ -11,22 +12,25 @@ export class PublicarPage implements OnInit {
 
   fecha: string;
 
-  entradas: Array<{ 
+  entradas: Array<{
+    id: string,
     fecha: string,
     fechaTexto: string,
     titulo: string,
     ingredientes: string,
     preparacion: string
-    
+   
   }> = [];
 
-  entradaActual: { 
+  entradaActual: {
+    id: string,
     fecha: string,
     fechaTexto: string,
     titulo: string,
     ingredientes: string,
     preparacion: string
   } = {
+    id: '',
     fecha: '',
     fechaTexto: '',
     titulo: '',
@@ -47,6 +51,7 @@ export class PublicarPage implements OnInit {
 
   InicializarNuevaEntrada() {
     this.entradaActual = {
+      id: uuidv4(),
       fechaTexto: moment().format('DD [de] MMMM [del] YYYY'),
       fecha: moment().format('DD-MM-YY'),
       titulo: '',
@@ -58,6 +63,7 @@ export class PublicarPage implements OnInit {
   async guardarEntrada() {
     this.entradas.push({ ...this.entradaActual });
     localStorage.setItem('entradas', JSON.stringify(this.entradas));
+
 
     const toast = await this.toastController.create({
       message: 'Receta publicada',
@@ -72,6 +78,3 @@ export class PublicarPage implements OnInit {
   ngOnInit() {
   }
 }
-
-
-
