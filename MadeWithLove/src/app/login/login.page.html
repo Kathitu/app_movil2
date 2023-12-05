@@ -11,7 +11,7 @@
   <ion-img src="https://64.media.tumblr.com/864887f0bfbd9160e379ce951ad5a356/cc8e89d5fafd62f2-58/s500x750/8ca20c4a99e5abb656ea9023a4bffcef083d9edd.gifv"></ion-img>
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Que alegria verte de nuevo :) </ion-card-title>
+    <ion-card-title>Qué alegría verte de nuevo :) </ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <form [formGroup]="formularioLogin">
@@ -20,13 +20,13 @@
         <ion-input formControlName="nombre"></ion-input>
         <ion-icon color= "primary" name="person-outline" slot="end"></ion-icon>
       </ion-item>
-      
+     
       <ion-item>
         <ion-label position="floating">Correo Electrónico</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>
         <ion-icon color= "primary" name="at-outline" slot="end"></ion-icon>
       </ion-item>
-      
+     
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
@@ -34,7 +34,14 @@
       </ion-item>
     </form>
     <br>
-    <ion-button (click)="ingresar()" (click)="autenticar()">Ingresar</ion-button>
+    <div class="ion-text-center">
+    <ion-button (click)="ingresar()">Ingresar</ion-button>
+    </div>
+    <div class="ion-text-center">
+    <ion-button (click)="autenticar()">Ingresar con tu huella
+      <ion-icon name="finger-print-outline"></ion-icon>
+    </ion-button>
+    </div>
   </ion-card-content>
 </ion-card>
 </ion-content>

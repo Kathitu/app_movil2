@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edicionperfil',
@@ -21,7 +22,7 @@ export class EdicionperfilPage implements OnInit {
     descripcion: '',
   };
  
-  constructor(public toastController: ToastController) {
+  constructor(public toastController: ToastController, private router: Router) {
     this.cargarDesc();
   }
 
@@ -47,6 +48,7 @@ export class EdicionperfilPage implements OnInit {
       duration: 2000
     });
     toast.present();
+    this.router.navigate(['/menu/miperfil']);
 
     this.InicializarNuevaDesc();
   }

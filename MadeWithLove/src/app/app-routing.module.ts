@@ -75,6 +75,10 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'config',
+    loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule)
+  },
+  {
     path: 'notfound',
     loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
   },

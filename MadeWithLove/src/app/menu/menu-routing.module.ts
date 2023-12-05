@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { MenuPage } from './menu.page';
 
 const routes: Routes = [
@@ -15,6 +14,10 @@ const routes: Routes = [
     {
       path: 'miperfil',
       loadChildren: () => import('../miperfil/miperfil.module').then( m => m.MiperfilPageModule)
+    },
+    {
+      path: 'edicionperfil',
+      loadChildren: () => import('../edicionperfil/edicionperfil.module').then( m => m.EdicionperfilPageModule)
     },
     {
       path: 'favoritos',
@@ -37,8 +40,12 @@ const routes: Routes = [
       loadChildren: () => import('../publicar/publicar.module').then( m => m.PublicarPageModule)
     },
     {
-      path: 'edicionperfil',
-      loadChildren: () => import('../edicionperfil/edicionperfil.module').then( m => m.EdicionperfilPageModule)
+      path: 'detalle-mipublicacion',
+      loadChildren: () => import('../detalle-mipublicacion/detalle-mipublicacion.module').then( m => m.DetalleMipublicacionPageModule)
+    },
+    {
+      path: 'config',
+      loadChildren: () => import('../config/config.module').then( m => m.ConfigPageModule)
     }]
   }
 ];
@@ -48,3 +55,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class MenuPageRoutingModule {}
+

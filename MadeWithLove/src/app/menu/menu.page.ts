@@ -41,6 +41,11 @@ export class MenuPage implements OnInit {
       url: '/menu/contacto',
       icono: 'mail'
     },
+    {
+      titulo:'Configuración',
+      url: '/menu/config',
+      icono: 'settings'
+    }
   ];
 
   constructor(public alertController: AlertController, public navCtrl: NavController) { }
@@ -60,7 +65,6 @@ export class MenuPage implements OnInit {
         {
           text: 'No, mejor no',
           handler: () => {
-
           }
         }, {
           text: 'Si',

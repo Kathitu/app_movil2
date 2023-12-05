@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import * as moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-publicar',
@@ -38,7 +39,7 @@ export class PublicarPage implements OnInit {
     preparacion: '',
   };
 
-  constructor(public toastController: ToastController) {
+  constructor(public toastController: ToastController, private router: Router) {
     moment.locale('es-mx');
     this.fecha = moment().format();
     this.cargarEntradas();
@@ -70,6 +71,7 @@ export class PublicarPage implements OnInit {
       duration: 2000
     });
     toast.present();
+    this.router.navigate(['/menu/miperfil']);
 
     // despues de guardar inicializa una nueva entrada para permitir agregar mas
     this.InicializarNuevaEntrada();

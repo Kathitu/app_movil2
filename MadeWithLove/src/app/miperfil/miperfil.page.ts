@@ -59,7 +59,7 @@ export class MiperfilPage implements OnInit {
         entrada: entrada
       }
     }
-    this.router.navigate(['/detalle-mipublicacion'], datosNavegacion);
+    this.router.navigate(['menu/detalle-mipublicacion'], datosNavegacion);
   }
   
   irDetalleDesc(descperfil: {
