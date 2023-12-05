@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
 import { ApiService } from '../api-rest.service';
-
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-register',
@@ -43,6 +43,7 @@ export class RegisterPage implements OnInit {
     }
 
     var usuario = {
+      id: uuidv4(),
       nombre: f.nombre,
       email: f.email,
       password: f.password
