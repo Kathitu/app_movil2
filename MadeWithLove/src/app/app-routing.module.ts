@@ -85,6 +85,11 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'localizacion',
+    loadChildren: () => import('./localizacion/localizacion.module').then( m => m.LocalizacionPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: 'notfound',
     loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
   },

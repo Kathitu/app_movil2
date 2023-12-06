@@ -50,6 +50,10 @@ const routes: Routes = [
     {
       path: 'camara',
       loadChildren: () => import('../camara/camara.module').then( m => m.CamaraPageModule)
+    },
+    {
+      path: 'localizacion',
+      loadChildren: () => import('../localizacion/localizacion.module').then( m => m.LocalizacionPageModule)
     }]
   }
 ];
