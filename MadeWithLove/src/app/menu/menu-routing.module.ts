@@ -46,6 +46,10 @@ const routes: Routes = [
     {
       path: 'config',
       loadChildren: () => import('../config/config.module').then( m => m.ConfigPageModule)
+    },
+    {
+      path: 'camara',
+      loadChildren: () => import('../camara/camara.module').then( m => m.CamaraPageModule)
     }]
   }
 ];

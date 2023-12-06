@@ -76,7 +76,13 @@ const routes: Routes = [
   },
   {
     path: 'config',
-    loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule)
+    loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'notfound',
