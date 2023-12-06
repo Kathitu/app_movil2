@@ -24,4 +24,8 @@ export class ConfigPage implements OnInit {
   eliminarUsuario() {
     this.apiService.eliminarUsuario();
   }
+
+  cambiarContrasena() {
+    this.apiService.cambiarContrasena();
+  }
 }
