@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-menu',
@@ -78,4 +79,13 @@ export class MenuPage implements OnInit {
 
     await alert.present();
   }
-}
+
+  shareApp(){
+    Share.share({
+      title: '¿Has visto la nueva app?',
+      text: 'Descarga la nueva app MadeWithLove',
+      url: 'http://ionicframework.com/',
+    });
+  }
+  }
+

@@ -14,12 +14,21 @@
             <ion-label>{{pagina.titulo}}</ion-label>
           </ion-item>
         </ion-menu-toggle>
+
         <ion-menu-toggle auto-hide="false">
           <ion-item (click)="salir()" routerDirection="root" lines="none" detail="false">
             <ion-icon slot="start" [name]="'exit-outline'"></ion-icon>
             <ion-label>Salir</ion-label>
           </ion-item>
         </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="shareApp()" routerDirection="root" lines="none" detail="false">
+            <ion-icon slot="start" [name]="'share-social-outline'"></ion-icon>
+            <ion-label>Compartir</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
       </ion-list>
     </ion-content>
   </ion-menu>
