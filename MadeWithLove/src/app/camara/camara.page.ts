@@ -1,35 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-camara',
   templateUrl: './camara.page.html',
   styleUrls: ['./camara.page.scss'],
-  providers: [ Camera ]
 })
 export class CamaraPage implements OnInit {
 
-  image: string | undefined;
+  imageSource: any;
+  constructor(private domSanitizer: DomSanitizer) {}
 
-  constructor(private camera: Camera) { }
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Prompt,
+      saveToGallery: true
+    });
 
-  ngOnInit() {
-  }
+    this.imageSource=this.domSanitizer.bypassSecurityTrustUrl(image.webPath ? image.webPath: "");
+}
 
-  openCamera(){
+getPhoto(){
+  return this.imageSource;
+}
 
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation: true
-    }
-  
-    this.camera.getPicture(options).then((imageData) => {
-    this.image = 'data:image/jpeg;base64,' + imageData;
-    }, err => {
-      console.log(err);
-    })
-  }
+ngOnInit() {
+}
 }

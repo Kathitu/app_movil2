@@ -12,10 +12,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <div class="container">
-    <ion-button expand="block" (click)="openCamera">Abrir cámara</ion-button>
-    <img [src]="image" *ngIf="image">
+  <div id="container">
+    <img [src]="getPhoto()" style="width: 400px;" />
+    <ion-button expand="block" (click)="takePicture()">Cámara</ion-button>
   </div>
 
   <ion-fab [routerLink]="['/menu/publicar']" slot="fixed" vertical="bottom" horizontal="end">
