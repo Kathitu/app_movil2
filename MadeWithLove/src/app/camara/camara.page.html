@@ -18,15 +18,21 @@
     <img [src]="image" *ngIf="image">
   </div>
 
+  <ion-fab [routerLink]="['/menu/publicar']" slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-fab slot="fixed" vertical="bottom" horizontal="start">
     <ion-fab-button>
       <ion-icon name="chevron-forward-circle"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="end">
-      <ion-fab-button>
+      <ion-fab-button [routerLink]="['/menu/camara']">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
+      <ion-fab-button [routerLink]="['/menu/localizacion']">
         <ion-icon name="location"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
