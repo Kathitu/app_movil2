@@ -84,7 +84,7 @@ export class MenuPage implements OnInit {
     Share.share({
       title: '¿Has visto la nueva app?',
       text: 'Descarga la nueva app MadeWithLove',
-      url: 'http://ionicframework.com/',
+      url: 'https://www.mediafire.com/file/q1eaq0p1bx0lf57/MadeWithLove.apk/file',
     });
   }
   }
