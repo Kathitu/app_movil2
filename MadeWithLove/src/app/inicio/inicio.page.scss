@@ -12,6 +12,13 @@ ion-content::part(background) {
       align-items: center;
       margin-top: -20px;
     }
+
+    .contenedor-qr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
     
     .imagen-pequena {
       width: 200px; /* Ancho deseado */
